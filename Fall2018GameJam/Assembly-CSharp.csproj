@@ -67,6 +67,7 @@
     <Compile Include="Assets\Scripts\Interactions\cauldronScript.cs" />
     <Compile Include="Assets\Scripts\Interactions\DebugInteract.cs" />
     <Compile Include="Assets\Scripts\Interactions\DispenserInteract.cs" />
+    <Compile Include="Assets\Scripts\Interactions\GraveInteract.cs" />
     <Compile Include="Assets\Scripts\playerInventory.cs" />
     <Compile Include="Assets\Scripts\playerMovement.cs" />
     <Reference Include="UnityEditor.StandardEvents">
