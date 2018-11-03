@@ -15,6 +15,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: 7.2000003
     y: 50.4
+    width: 1522
     height: 767
   m_ShowMode: 4
   m_Title: 
