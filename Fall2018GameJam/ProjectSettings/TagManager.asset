@@ -5,6 +5,9 @@ TagManager:
   serializedVersion: 2
   tags:
   - baseObject
+  - Enemy
+  - Minion
+  - Layer Spawner
   layers:
   - Default
   - TransparentFX
