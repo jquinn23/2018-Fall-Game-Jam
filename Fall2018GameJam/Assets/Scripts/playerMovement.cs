@@ -4,12 +4,8 @@ using UnityEngine;
 
 public class playerMovement : MonoBehaviour {
 
-    Rigidbody2D playerRigidBody;
     public float speed;
-    
-    void Start () {
-        playerRigidBody = this.GetComponent<Rigidbody2D>();
-	}
+
 
     void Update()
     {

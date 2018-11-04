@@ -61,6 +61,16 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\Scripts\Carrying Scripts\itemType.cs" />
+    <Compile Include="Assets\Scripts\Carrying Scripts\pInventory.cs" />
+    <Compile Include="Assets\Scripts\GameControl.cs" />
+    <Compile Include="Assets\Scripts\Interactions\cauldronScript.cs" />
+    <Compile Include="Assets\Scripts\Interactions\DebugInteract.cs" />
+    <Compile Include="Assets\Scripts\Interactions\DispenserInteract.cs" />
+    <Compile Include="Assets\Scripts\Interactions\GraveInteract.cs" />
+    <Compile Include="Assets\Scripts\LevelManager.cs" />
+    <Compile Include="Assets\Scripts\Minion and Enemy Scripts\EnemyScript.cs" />
+    <Compile Include="Assets\Scripts\Minion and Enemy Scripts\MeleeMinionScript.cs" />
     <Compile Include="Assets\Scripts\playerMovement.cs" />
     <Reference Include="UnityEditor.StandardEvents">
       <HintPath>D:/GitHub Repositories/Fall Game Jam 2018/2018-Fall-Game-Jam/Fall2018GameJam/Library/ScriptAssemblies/UnityEditor.StandardEvents.dll</HintPath>
