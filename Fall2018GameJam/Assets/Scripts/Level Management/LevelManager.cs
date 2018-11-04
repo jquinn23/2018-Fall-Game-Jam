@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class LevelManager : MonoBehaviour {
     public GameObject enemy;
+    public GameObject otherEnemy;
     private GameObject[] spawners;
     public float[] spawnTime;
     public float waveLength = 30.0f;
@@ -25,7 +26,17 @@ public class LevelManager : MonoBehaviour {
     void SpawnEnemy()
     {
         int random = Random.Range(0, (int)spawners.Length);
-        GameObject.Instantiate(enemy, spawners[random].transform.position - new Vector3(1, 0), new Quaternion(0, 0, 0, 0));
+        int enemyType = Random.Range(0, (int)2);
+        GameObject toBeSpawned;
+        if(enemyType == 0)
+        {
+            toBeSpawned = enemy;
+        }
+        else
+        {
+            toBeSpawned = otherEnemy;
+        }
+        GameObject.Instantiate(toBeSpawned, spawners[random].transform.position - new Vector3(1, 0), new Quaternion(0, 0, 0, 0));
     }
 
     

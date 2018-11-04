@@ -23,7 +23,7 @@ public class cauldronScript : MonoBehaviour {
     private void Start()
     {
         controller = GameObject.Find("GameManager").GetComponent<GameControl>();
-        player = controller.getPlayer();
+        player = GameObject.Find("Player");
         containedItem = baseItem;
         interact = false;
         Bubbles.SetActive(false);
