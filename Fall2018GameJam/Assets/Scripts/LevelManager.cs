@@ -5,12 +5,21 @@ using UnityEngine;
 public class LevelManager : MonoBehaviour {
     public GameObject enemy;
     private GameObject[] spawners;
-    public float spawnTime;
-	// Use this for initialization
-	void Start () {
+    public float[] spawnTime;
+    public float waveLength = 30.0f;
+    private float timer;
+    public int waveNumber;
+    private int timePassed;
+    private bool nextWave;
+
+    // Use this for initialization
+    void Start () {
         spawners = GameObject.FindGameObjectsWithTag("Layer Spawner");
-        InvokeRepeating("SpawnEnemy", 0, spawnTime);
-	}
+        timer = waveLength;
+        timePassed = 0;
+        waveNumber = 0;
+        InvokeRepeating("SpawnEnemy", 0, spawnTime[waveNumber]);
+    }
 	
 
     void SpawnEnemy()
@@ -19,8 +28,27 @@ public class LevelManager : MonoBehaviour {
         GameObject.Instantiate(enemy, spawners[random].transform.position - new Vector3(1, 0), new Quaternion(0, 0, 0, 0));
     }
 
-	// Update is called once per frame
-	void Update () {
-		
-	}
+    
+
+    void Update()
+    {
+        timer -= Time.deltaTime;
+        
+        if(timer <= 0)
+        {
+            waveNumber++;
+            timer = waveLength;
+            nextWave = true;
+        }
+        if (waveNumber > spawnTime.Length - 1)
+        {
+            waveNumber = (spawnTime.Length - 1);
+        }
+        if(nextWave == true)
+        {
+            nextWave = false;
+            CancelInvoke();
+            InvokeRepeating("SpawnEnemy", 0, spawnTime[waveNumber]);
+        }
+    }
 }

@@ -1648,6 +1648,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemy: {fileID: 1715093570668562, guid: 6838d9311daa3024eb96d464b57ec2e3, type: 2}
+  spawnTime:
+  - 20
+  - 15
+  - 10
+  - 9
+  - 8
+  - 7
+  - 6
+  - 5
+  - 4
+  - 3
+  waveLength: 40
+  waveNumber: 0
 --- !u!4 &1494606147
 Transform:
   m_ObjectHideFlags: 0
