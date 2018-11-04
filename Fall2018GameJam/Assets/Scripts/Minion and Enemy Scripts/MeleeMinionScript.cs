@@ -30,6 +30,10 @@ public class MeleeMinionScript : MonoBehaviour {
                     attackFlag = false;
                 }
             }
+            else if(eastCast.collider.tag.Equals("Layer Spawner"))
+            {
+                GameObject.Destroy(gameObject);
+            }
         }
         else
         {
