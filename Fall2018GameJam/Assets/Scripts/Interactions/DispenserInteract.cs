@@ -10,7 +10,7 @@ public class DispenserInteract : MonoBehaviour {
 
     private void Start()
     {
-        controller = GameObject.Find("GameController").GetComponent<GameControl>();
+        controller = GameObject.Find("GameManager").GetComponent<GameControl>();
         player = controller.getPlayer();
         interact = false;
     }

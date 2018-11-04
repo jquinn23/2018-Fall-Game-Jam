@@ -24,13 +24,21 @@ public class EnemyScript : MonoBehaviour {
 
         if(westCast)
         {
-            if(westCast.collider.tag.Equals("Minion"))
+            if (westCast.collider.tag.Equals("Minion"))
             {
                 if (attackFlag)
                 {
                     westCast.collider.GetComponent<MeleeMinionScript>().takeDamage(attackDamage);
                     attackFlag = false;
                 }
+            }
+            else if (westCast.collider.tag.Equals("GraveStone"))
+            {
+                GameObject.Find("GameManager").GetComponent<GameControl>().EndLevel();
+            }
+            else
+            {
+                Debug.Log(westCast.collider.tag);
             }
         }
         else

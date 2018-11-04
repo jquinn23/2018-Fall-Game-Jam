@@ -18,13 +18,15 @@ public class cauldronScript : MonoBehaviour {
     public GameObject RedGreenPotion;
     public GameObject BlueGreenPotion;
     public GameObject RedBlueGreenPotion;
+    public GameObject Bubbles;
 
     private void Start()
     {
-        controller = GameObject.Find("GameController").GetComponent<GameControl>();
+        controller = GameObject.Find("GameManager").GetComponent<GameControl>();
         player = controller.getPlayer();
         containedItem = baseItem;
         interact = false;
+        Bubbles.SetActive(false);
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -56,14 +58,20 @@ public class cauldronScript : MonoBehaviour {
                     if (heldItemType.myType == itemType.type.B || heldItemType.myType == itemType.type.RB)
                     {
                         containedItem = RedBluePotion;
+                        Bubbles.GetComponent<SpriteRenderer>().color = new Color(255f, 0, 255f);
+                        Bubbles.SetActive(true);
                     }
                     else if (heldItemType.myType == itemType.type.G || heldItemType.myType == itemType.type.RG)
                     {
                         containedItem = RedGreenPotion;
+                        Bubbles.GetComponent<SpriteRenderer>().color = new Color(255f, 255f, 0);
+                        Bubbles.SetActive(true);
                     }
                     else if (heldItemType.myType == itemType.type.BG || heldItemType.myType == itemType.type.RGB)
                     {
                         containedItem = RedBlueGreenPotion;
+                        Bubbles.GetComponent<SpriteRenderer>().color = new Color(255f, 255f, 255f);
+                        Bubbles.SetActive(true);
                     }
                 }
                 else if (containedItem.GetComponent<itemType>().myType == itemType.type.B)
@@ -71,14 +79,20 @@ public class cauldronScript : MonoBehaviour {
                     if (heldItemType.myType == itemType.type.R || heldItemType.myType == itemType.type.RB)
                     {
                         containedItem = RedBluePotion;
+                        Bubbles.GetComponent<SpriteRenderer>().color = new Color(255f, 0, 255f);
+                        Bubbles.SetActive(true);
                     }
                     else if (heldItemType.myType == itemType.type.G || heldItemType.myType == itemType.type.BG)
                     {
                         containedItem = BlueGreenPotion;
+                        Bubbles.GetComponent<SpriteRenderer>().color = new Color(0, 255f, 255f);
+                        Bubbles.SetActive(true);
                     }
                     else if (heldItemType.myType == itemType.type.RG || heldItemType.myType == itemType.type.RGB)
                     {
                         containedItem = RedBlueGreenPotion;
+                        Bubbles.GetComponent<SpriteRenderer>().color = new Color(255f, 255f, 255f);
+                        Bubbles.SetActive(true);
                     }
                 }
                 else if (containedItem.GetComponent<itemType>().myType == itemType.type.G)
@@ -86,14 +100,20 @@ public class cauldronScript : MonoBehaviour {
                     if (heldItemType.myType == itemType.type.R || heldItemType.myType == itemType.type.RG)
                     {
                         containedItem = RedGreenPotion;
+                        Bubbles.GetComponent<SpriteRenderer>().color = new Color(255f, 255f, 0);
+                        Bubbles.SetActive(true);
                     }
                     else if (heldItemType.myType == itemType.type.B || heldItemType.myType == itemType.type.BG)
                     {
                         containedItem = BlueGreenPotion;
+                        Bubbles.GetComponent<SpriteRenderer>().color = new Color(0, 255f, 255f);
+                        Bubbles.SetActive(true);
                     }
                     else if (heldItemType.myType == itemType.type.RB || heldItemType.myType == itemType.type.RGB)
                     {
                         containedItem = RedBlueGreenPotion;
+                        Bubbles.GetComponent<SpriteRenderer>().color = new Color(255f, 255f, 255f);
+                        Bubbles.SetActive(true);
                     }
                 }
                 else if (containedItem.GetComponent<itemType>().myType == itemType.type.RB)
@@ -101,10 +121,14 @@ public class cauldronScript : MonoBehaviour {
                     if (heldItemType.myType == itemType.type.R || heldItemType.myType == itemType.type.B)
                     {
                         containedItem = RedBluePotion;
+                        Bubbles.GetComponent<SpriteRenderer>().color = new Color(255f, 0, 255f);
+                        Bubbles.SetActive(true);
                     }
                     else if (heldItemType.myType == itemType.type.G || heldItemType.myType == itemType.type.RG || heldItemType.myType == itemType.type.BG || heldItemType.myType == itemType.type.RGB)
                     {
                         containedItem = RedBlueGreenPotion;
+                        Bubbles.GetComponent<SpriteRenderer>().color = new Color(255f, 255f, 255f);
+                        Bubbles.SetActive(true);
                     }
 
                 }
@@ -113,10 +137,14 @@ public class cauldronScript : MonoBehaviour {
                     if (heldItemType.myType == itemType.type.R || heldItemType.myType == itemType.type.G)
                     {
                         containedItem = RedGreenPotion;
+                        Bubbles.GetComponent<SpriteRenderer>().color = new Color(255f, 255f, 0);
+                        Bubbles.SetActive(true);
                     }
                     else if (heldItemType.myType == itemType.type.B || heldItemType.myType == itemType.type.RB || heldItemType.myType == itemType.type.BG || heldItemType.myType == itemType.type.RGB)
                     {
                         containedItem = RedBlueGreenPotion;
+                        Bubbles.GetComponent<SpriteRenderer>().color = new Color(255f, 255f, 255f);
+                        Bubbles.SetActive(true);
                     }
 
                 }
@@ -125,10 +153,14 @@ public class cauldronScript : MonoBehaviour {
                     if (heldItemType.myType == itemType.type.B || heldItemType.myType == itemType.type.G)
                     {
                         containedItem = BlueGreenPotion;
+                        Bubbles.GetComponent<SpriteRenderer>().color = new Color(0, 255f, 255f);
+                        Bubbles.SetActive(true);
                     }
                     else if (heldItemType.myType == itemType.type.R || heldItemType.myType == itemType.type.RB || heldItemType.myType == itemType.type.RG || heldItemType.myType == itemType.type.RGB)
                     {
                         containedItem = RedBlueGreenPotion;
+                        Bubbles.GetComponent<SpriteRenderer>().color = new Color(255f, 255f, 255f);
+                        Bubbles.SetActive(true);
                     }
 
                 }
@@ -137,30 +169,44 @@ public class cauldronScript : MonoBehaviour {
                     if (heldItemType.myType == itemType.type.R)
                     {
                         containedItem = RedPotion;
+                        Bubbles.GetComponent<SpriteRenderer>().color = new Color(255f, 0, 0);
+                        Bubbles.SetActive(true);
                     }
                     else if (heldItemType.myType == itemType.type.B)
                     {
                         containedItem = BluePotion;
+                        Bubbles.GetComponent<SpriteRenderer>().color = new Color(0, 0, 255f);
+                        Bubbles.SetActive(true);
                     }
                     else if (heldItemType.myType == itemType.type.G)
                     {
                         containedItem = GreenPotion;
+                        Bubbles.GetComponent<SpriteRenderer>().color = new Color(0, 255f, 0);
+                        Bubbles.SetActive(true);
                     }
                     else if (heldItemType.myType == itemType.type.RG)
                     {
                         containedItem = RedGreenPotion;
+                        Bubbles.GetComponent<SpriteRenderer>().color = new Color(255f, 255f, 0);
+                        Bubbles.SetActive(true);
                     }
                     else if (heldItemType.myType == itemType.type.RB)
                     {
                         containedItem = RedBluePotion;
+                        Bubbles.GetComponent<SpriteRenderer>().color = new Color(255f, 0, 255f);
+                        Bubbles.SetActive(true);
                     }
                     else if (heldItemType.myType == itemType.type.BG)
                     {
                         containedItem = RedBlueGreenPotion;
+                        Bubbles.GetComponent<SpriteRenderer>().color = new Color(255f, 255f, 255f);
+                        Bubbles.SetActive(true);
                     }
                     else if (heldItemType.myType == itemType.type.RGB)
                     {
                         containedItem = RedBlueGreenPotion;
+                        Bubbles.GetComponent<SpriteRenderer>().color = new Color(255f, 255f, 255f);
+                        Bubbles.SetActive(true);
                     }
                 }
 
@@ -169,6 +215,7 @@ public class cauldronScript : MonoBehaviour {
             else
             {
                 player.GetComponent<pInventory>().setItem(containedItem);
+                Bubbles.SetActive(false);
                 containedItem = baseItem;
             }
         }

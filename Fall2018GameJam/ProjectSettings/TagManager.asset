@@ -8,6 +8,7 @@ TagManager:
   - Enemy
   - Minion
   - Layer Spawner
+  - GraveStone
   layers:
   - Default
   - TransparentFX
@@ -44,4 +45,7 @@ TagManager:
   m_SortingLayers:
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: Potion
+    uniqueID: 2446166113
     locked: 0
