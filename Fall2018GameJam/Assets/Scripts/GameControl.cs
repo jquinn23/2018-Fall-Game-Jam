@@ -15,7 +15,9 @@ public class GameControl : MonoBehaviour {
 
     public static GameControl control;
     private GameObject player;
-    
+    public List<string> Scenes = new List<string>();
+    private string currentLevel;
+
 
     // Use this for initialization
     /*
@@ -35,8 +37,13 @@ public class GameControl : MonoBehaviour {
             Destroy(gameObject);
         }
 
-        player = GameObject.FindGameObjectsWithTag("Player")[0];
-	}
+        if(GameObject.FindGameObjectsWithTag("Player").Length != 0)
+        {
+            player = GameObject.FindGameObjectsWithTag("Player")[0];
+        }
+        
+        currentLevel = SceneManager.GetActiveScene().name;
+    }
 
     private void Update()
     {
@@ -51,7 +58,35 @@ public class GameControl : MonoBehaviour {
         return player;
     }
 
- 
+    public void EndLevel()
+    {
+        //Finds the scene in the list to determine what the next level should be
+        int j = Scenes.IndexOf(currentLevel);
+        print(Scenes.Count);
+        print(j);
 
-    
+        //If we are at the end of the list, loop to the beginning/menu
+        if (j == Scenes.Count - 1)
+        {
+            currentLevel = Scenes[0];
+            print("trigger");
+        }
+        else
+        {
+            /*
+             * Otherwise, go to the next leve. As a note, if IndexOf fails, it will return -1
+             * in which case I want it to go to scene 0 or the main menu, and since -1 + 1 = 0,
+             * no additional code is required.
+             */
+            currentLevel = Scenes[j + 1];
+        }
+
+        //Loads the new currentLevel
+        print(currentLevel);
+        SceneManager.LoadScene(currentLevel);
+    }
+
+
+
+
 }
