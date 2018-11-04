@@ -21,7 +21,7 @@ public class GraveInteract : MonoBehaviour {
     // Use this for initialization
     void Start () {
         controller = GameObject.Find("GameManager").GetComponent<GameControl>();
-        player = controller.getPlayer();
+        player = GameObject.Find("Player");
         interact = false;
     }
 

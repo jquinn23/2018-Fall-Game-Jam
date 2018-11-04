@@ -11,7 +11,7 @@ public class DispenserInteract : MonoBehaviour {
     private void Start()
     {
         controller = GameObject.Find("GameManager").GetComponent<GameControl>();
-        player = controller.getPlayer();
+        player = GameObject.Find("Player");
         interact = false;
     }
 

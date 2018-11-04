@@ -51,6 +51,7 @@ public class GameControl : MonoBehaviour {
         {
             Application.Quit();
         }
+
     }
 
     public GameObject getPlayer()
@@ -84,6 +85,7 @@ public class GameControl : MonoBehaviour {
         //Loads the new currentLevel
         print(currentLevel);
         SceneManager.LoadScene(currentLevel);
+
     }
 
 
